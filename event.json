@@ -10,98 +10,18 @@
   "requestPayload": {
     "ruCode": "CEN",
     "dateOffset": 0,
-    "whatsAppNumber": "120363379766529413@newsletter",
+    "whatsAppNumber": "120363405768268322@newsletter",
     "whatsAppLink": "https://whatsapp.com/channel/0029VazQCEaEQIarkT6jii2o"
   },
   "responseContext": { "statusCode": 200, "executedVersion": "$LATEST" },
   "responsePayload": {
     "restaurant": {
-      "name": "Central",
-      "code": "CEN",
-      "url": "https://proad.ufpr.br/ru/ru-central/"
+      "name": "Agrárias",
+      "code": "AGR",
+      "url": "https://p4e.ufpr.br/ru/cardapio-ru-agrarias/"
     },
-    "date": "21/04/2026",
-    "imgMenu": null,
-    "meals": {
-      "breakfast": [
-        {
-          "name": "Pão de milho ou integral com presunto",
-          "icons": ["Contêm produtos de origem suína", "Contém glúten"],
-          "changed": false
-        },
-        {
-          "name": "Opção vegana: Pão de milho ou integral com escabeche de berinjela",
-          "icons": ["Indicado para veganos", "Contém glúten"],
-          "changed": false
-        },
-        {
-          "name": "Mamão",
-          "icons": ["Indicado para veganos"],
-          "changed": false
-        }
-      ],
-      "dinner": [
-        {
-          "name": "Carne moída ao sugo",
-          "icons": ["Contêm produtos de origem animal"],
-          "changed": false
-        },
-        {
-          "name": "Opção vegana: Ervilha seca ao sugo com milho e pimentão",
-          "icons": ["Indicado para veganos"],
-          "changed": false
-        },
-        {
-          "name": "Sopa de aipim",
-          "icons": ["Indicado para veganos"],
-          "changed": false
-        },
-        {
-          "name": "Saladas: Folhosa e beterraba ralada",
-          "icons": ["Indicado para veganos", "Indicado para veganos"],
-          "changed": false
-        },
-        {
-          "name": "Molho para saladas: Vinagrete",
-          "icons": ["Indicado para veganos"],
-          "changed": false
-        }
-      ],
-      "lunch": [
-        {
-          "name": "Lombo suíno com abacaxi",
-          "icons": ["Contêm produtos de origem suína"],
-          "changed": false
-        },
-        {
-          "name": "Opção vegana: Croquete de feijão fradinho com abacaxi grelhado",
-          "icons": ["Indicado para veganos", "Contém glúten"],
-          "changed": false
-        },
-        {
-          "name": "Cenoura com acelga à moda chinesa",
-          "icons": [
-            "Indicado para veganos",
-            "Contém ingrediente(s) potencialmente alergênico(s)"
-          ],
-          "changed": false
-        },
-        {
-          "name": "Saladas: Folhosa e tomate",
-          "icons": ["Indicado para veganos", "Indicado para veganos"],
-          "changed": false
-        },
-        {
-          "name": "Molho para saladas: Molho verde",
-          "icons": ["Contém leite e/ou derivados", "Contêm ovos"],
-          "changed": false
-        },
-        {
-          "name": "Gelatina",
-          "icons": ["Contêm produtos de origem animal"],
-          "changed": false
-        }
-      ]
-    }
+    "date": "19/06/2026",
+    "imgMenu": "https://ru-menu-images.s3.amazonaws.com/agr/19_06_2026_menu_agr.jpg",
+    "meals": {}
   }
 }
