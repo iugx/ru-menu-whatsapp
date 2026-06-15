@@ -44,15 +44,13 @@ func fmtMenu(evt EventLambda) string {
 	weekday := t.Weekday()
 	titleStr := fmt.Sprintf(title, strings.ToUpper(menu.Restaurant.Name), weekDay[int(weekday)], menu.Date)
 
-	for i, mealServed := range mealOrder {
+	sections = append(sections, titleStr)
+
+	for _, mealServed := range mealOrder {
 		if meals, exists := menu.Meals[mealServed]; exists {
 			header := mealTypeHeaders[mealServed]
 			mealSection := header + "\n" + fmtMeal(meals)
-			if i == 0 {
-				sections = append(sections, titleStr+"\n\n"+mealSection)
-			} else {
-				sections = append(sections, mealSection)
-			}
+			sections = append(sections, mealSection)
 		}
 	}
 

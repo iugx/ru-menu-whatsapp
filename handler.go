@@ -66,8 +66,16 @@ func handler(ctx context.Context, raw json.RawMessage) (string, error) {
 	}
 
 	formattedMenu := fmtMenu(event)
-	if err := sendNewsletterMessage(client, event.RequestPayload.WhatsAppNumber, formattedMenu); err != nil {
-		fmt.Printf("Send error: %v\n", err)
+
+	if event.ResponsePayload.ImgMenu != nil && *event.ResponsePayload.ImgMenu != "" {
+		fmt.Printf("Sending image: %s\n", *event.ResponsePayload.ImgMenu)
+		if err := sendImage(client, event.RequestPayload.WhatsAppNumber, *event.ResponsePayload.ImgMenu, formattedMenu); err != nil {
+			fmt.Printf("Image send error: %v\n", err)
+		}
+	} else {
+		if err := sendNewsletterMessage(client, event.RequestPayload.WhatsAppNumber, formattedMenu); err != nil {
+			fmt.Printf("Send error: %v\n", err)
+		}
 	}
 
 	client.Disconnect()
