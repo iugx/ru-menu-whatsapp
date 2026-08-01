@@ -1,0 +1,44 @@
+name: Auto update WhatsApp library
+
+on:
+  schedule:
+    - cron: "0 3 * * 1"
+  workflow_dispatch:
+
+jobs:
+  update-whatsmeow:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+
+      - name: Update WhatsApp dependency
+        run: |
+          go get -u go.mau.fi/whatsmeow@latest
+          go mod tidy
+
+      - name: Run project tests
+        run: go test ./...
+
+      - name: Commit and push if dependency changed
+        run: |
+          if git diff --quiet -- go.mod go.sum; then
+            echo "No dependency update found."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add go.mod go.sum
+          git commit -m "chore: update whatsmeow"
+          git push origin HEAD:${GITHUB_REF_NAME}
